@@ -1,5 +1,6 @@
 package ru.netology;
 
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -12,6 +13,9 @@ import static com.codeborne.selenide.Selenide.open;
 public class CardDeliveryTest {
     @Test
     void shouldRegisterDeliveryCard() {
+
+        Configuration.headless=true;
+
         open("http://localhost:9999/");
         $("[data-test-id=city] input").setValue("Екатеринбург");
         $("[data-test-id=date] input").setValue("");
